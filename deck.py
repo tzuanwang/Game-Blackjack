@@ -2,8 +2,10 @@
 # Draw cards each round
 # Shuffle the cards
 import random
+from suit import Suit
+from card import Card
 
-class deck:
+class Deck:
 
     # Build up the deck
     def __init__(self):
@@ -20,6 +22,6 @@ class deck:
         return self._cards.pop()
     
     def shuffle(self):
-        for i in range(len(self._cards)):
-            j = random.randint(0, 51)
-            self._cards[i], self._cards[j] = self._cards[j], self._cards[i]
+        for i in range(len(self._cards)): # iterate over all cards
+            j = random.randint(0, 51) # randomly pick a number between 1 - 52 (position)
+            self._cards[i], self._cards[j] = self._cards[j], self._cards[i] # exchange the position
